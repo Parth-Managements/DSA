@@ -121,43 +121,51 @@ void battle()
     pntB++;
 }
 
-int check()
+int check1()
 {
     int cntA = 0;
-    int cntB = 0;
     for (int i = pntA; i < a; i++)
     {
         cntA++;
     }
+
+    if (cntA == 0)
+    {
+        return 1;
+    }
+    return 0;
+}
+
+int check2()
+{
+    int cntB=0;
     for (int i = pntB; i < b; i++)
     {
         cntB++;
     }
-
-    if (cntA == 0)
-    {
-        printf("\n\nPlayer B wins the final game\n\n");
-        return 1;
-    }
-
     if (cntB == 0)
     {
-        printf("\n\nPlayer A wins the final game\n\n");
         return 1;
     }
-
-    return 0;
+    else
+    {
+        return 0;
+    }
 }
-
 int main()
 {
     int count = 1;
     distribution();
-    while (count <= 4)
+    while (count <= 50)
     {
-        if (check())
+        if (check1())
         {
+            printf("\n\nPlayer B wins the final game\n\n");
             break;
+        }
+        if (check2())
+        {
+            printf("\n\nPlayer A wins the final game\n\n");
         }
         battle();
         display();
