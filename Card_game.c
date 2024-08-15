@@ -98,6 +98,7 @@ void battle()
     {
         if (tiecnt % 2 == 1)
         {
+            printf("\n\nPlayer B wins!!!!!!!!!\n");
             playerB[b] = tie1;
             b++;
             playerB[b] = tie2;
@@ -121,6 +122,25 @@ void battle()
     pntB++;
 }
 
+int check0()
+{
+    int cntA = 0;
+    int cntB = 0;
+    for (int i = pntA; i < a; i++)
+    {
+        cntA++;
+    }
+    for (int i = pntB; i < b; i++)
+    {
+        cntB++;
+    }
+    if(cntA == 0 && cntB == 0)
+    {
+        return 1;
+    }
+
+    return 0;
+}
 int check1()
 {
     int cntA = 0;
@@ -138,7 +158,7 @@ int check1()
 
 int check2()
 {
-    int cntB=0;
+    int cntB = 0;
     for (int i = pntB; i < b; i++)
     {
         cntB++;
@@ -158,6 +178,11 @@ int main()
     distribution();
     while (count <= 50)
     {
+        if(check0())
+        {
+            printf("\n\n The game is tie \n\n");
+            break;
+        }
         if (check1())
         {
             printf("\n\nPlayer B wins the final game\n\n");
