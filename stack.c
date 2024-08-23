@@ -10,7 +10,7 @@ int top=-1;//-1 -> EMPTY
 
 
 void push(int num){
-    if(top == SIZE - 1){
+    if(top >= SIZE - 1){
         printf("\nOVERFLOW");
     }else{
         top++;

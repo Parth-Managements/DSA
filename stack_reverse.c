@@ -5,7 +5,7 @@
 char stack[SIZE];
 
 int top=-1;
-+9
+
 
 void push(char num){
     if(top == SIZE - 1){
