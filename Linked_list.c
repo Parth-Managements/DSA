@@ -165,6 +165,7 @@ void deletebeg()
     if (head == NULL)
     {
         printf("List is empty!!");
+        return;
     }
     else
     {

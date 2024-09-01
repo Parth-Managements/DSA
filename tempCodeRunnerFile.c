@@ -1,1 +1,4 @@
-size
+    // if(head == NULL)
+    // {
+    //     addnode(data);
+    // }
